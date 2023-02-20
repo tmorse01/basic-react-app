@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useCallback, useState } from "react";
+import UsernameInput from "./username";
+import PasswordInput from "./password";
 
 function App() {
+  const [formValues, setFormValues] = useState({ username: "", password: "" });
+  const onChange = useCallback((name, value) => {
+    setFormValues({ ...formValues, [name]: value });
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UsernameInput value={formValues.username} onChange={onChange} />
+      <PasswordInput value={formValues.password} onChange={onChange} />
     </div>
   );
 }
