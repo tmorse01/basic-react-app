@@ -1,5 +1,5 @@
 const UsernameInput = ({ value, onChange }) => {
-  console.log("username render: ", value);
+  console.count("username render");
   return (
     <input
       title="username"

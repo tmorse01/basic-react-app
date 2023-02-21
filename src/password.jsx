@@ -1,5 +1,5 @@
 const PasswordInput = ({ value, onChange }) => {
-  console.log("password render: ", value);
+  console.count("password render");
   return (
     <input
       title="password"
